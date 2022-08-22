@@ -86,7 +86,7 @@ public class PlaceCommand{
                     Z = -1 * Z;
                 }
             }
-            sender.sendMessage("x:"+X+"/y:"+Y+"/z:"+Z+"/Replaced DeepDiamond");
+            System.out.println("x:"+X+"/y:"+Y+"/z:"+Z+"/Replaced DeepDiamond");
         }
 
         sender.sendMessage("Extra process placed "+difference+" diamond blocks.");

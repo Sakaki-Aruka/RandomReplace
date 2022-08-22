@@ -30,8 +30,10 @@ public class FindDiamondPlace implements CommandExecutor {
                 for (int z = -161; z < 161; z++) {
                     String block = Bukkit.getWorld(worldName).getBlockAt(x,y,z).getType().toString();
                     if(block.toLowerCase(Locale.ROOT).contains("diamond")){
+                        /*debug
                         System.out.println("x:"+x+"/y:"+y+"/z:"+z+"/block:"+block);
                         sender.sendMessage("x:"+x+"/y:"+y+"/z:"+z+"/block:"+block);
+                         */
                         total += 1;
                     }
                 }
@@ -49,6 +51,6 @@ public class FindDiamondPlace implements CommandExecutor {
         PC.place(args,(Player)sender,not_enough);
 
 
-        return false;
+        return true;
     }
 }
