@@ -1,0 +1,10 @@
+name: DiamondRandomPlace
+version: '${project.version}'
+main: com.github.ytshiyugh.diamondrandomplace.DiamondRandomPlace
+api-version: 1.19
+authors: [ SakakiAruka ]
+description: Place diamond ore on random locations.
+commands:
+  fdp:
+    description:  can use only admin
+    permission: drp.fdp
