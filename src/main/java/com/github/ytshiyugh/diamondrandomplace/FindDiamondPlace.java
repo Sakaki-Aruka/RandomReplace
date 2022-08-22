@@ -42,7 +42,7 @@ public class FindDiamondPlace implements CommandExecutor {
 
         sender.sendMessage(total+" diamonds found from the region.");
 
-        int not_enough = 4000 - total;
+        int not_enough = 5500 - total;
 
         not_enough = not_enough - (not_enough % 2);
 
