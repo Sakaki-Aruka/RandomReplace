@@ -1,6 +1,9 @@
 package com.github.ytshiyugh.diamondrandomplace;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
 import java.util.Locale;
@@ -25,6 +28,7 @@ public class PlaceCommand{
         int Loops = blocks / 2;
         int LoopCounter = 0;
 
+
         for (int i=0;i<Loops;i++){
             //
             Random random = new Random();
@@ -41,7 +45,11 @@ public class PlaceCommand{
                 //if the block of target is air or void_air
                 continue;
             }
-            sender.sendMessage("x:"+xPlus+"/y:"+y+"/z:"+zPlus+"/Replaced DeepDiamond");
+            System.out.println("x:"+xPlus+"/y:"+y+"/z:"+zPlus+"/Replaced DeepDiamond");
+
+            Location replace = new Location(sender.getWorld(),(double)xPlus,(double)y,(double)zPlus);
+            replace.getBlock().setType(Material.DIAMOND_ORE);
+
             i += 1;
             LoopCounter += 1;
             //BlockData blockData = Bukkit.createBlockData(Material.DEEPSLATE_DIAMOND_ORE);
@@ -59,7 +67,11 @@ public class PlaceCommand{
             if(block.toLowerCase(Locale.ROOT).contains("air")){
                 continue;
             }
-            sender.sendMessage("x:"+xMinus+"/y:"+y+"/z:"+zMinus+"/Replaced DeepDiamond");
+            System.out.println("x:"+xMinus+"/y:"+y+"/z:"+zMinus+"/Replaced DeepDiamond");
+
+            Location replace = new Location(sender.getWorld(),(double)xMinus,(double)y,(double)zMinus);
+            replace.getBlock().setType(Material.DIAMOND_ORE);
+
             i += 1;
             LoopCounter += 1;
             //BlockData blockData = Bukkit.createBlockData(Material.DEEPSLATE_DIAMOND_ORE);
@@ -87,6 +99,9 @@ public class PlaceCommand{
                 }
             }
             System.out.println("x:"+X+"/y:"+Y+"/z:"+Z+"/Replaced DeepDiamond");
+
+            Location replace = new Location(sender.getWorld(),(double)X,(double)Y,(double)Z);
+            replace.getBlock().setType(Material.DIAMOND_ORE);
         }
 
         sender.sendMessage("Extra process placed "+difference+" diamond blocks.");
